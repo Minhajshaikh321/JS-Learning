@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>booleans</title>
+    </head>
+    <body>
+        <script>
+
+        
+            console.log(typeof 'true');
+            console.log(typeof false);
+            console.log(3<5);
+            console.log(3>5);
+            console.log(5==='5.000')
+            // console.log(`double equal:${5=='5.00'}`); //double equale convert both value into same type
+            // console.log(`triple equal:${5==='5.00'}`);
+            // console.log(`double equal not:${5!='5.00'}`)
+            // console.log(`triple equal not:${5!=='5.00'}`)
+
+            //comparison operator have less priority
+            console.log(3>5-5)
+            
+            if (true){      //this line is call condition
+                console.log('hello in if!')  //this line call branches
+            } else{
+                console.log('hello in else!')
+            }
+
+
+            const age=15
+            if (age>=16){
+                console.log('you can drive')
+            }else if(age>=14){
+                console.log('Almost there!')
+
+            }
+             else{
+                console.log('you can not drive')
+            }
+            
+
+            
+            //logical operators AND(&&)-OR(||)-NOT(!)
+            console.log('logical AND operator');
+            console.log(true&& true);
+            console.log(0.2>=0 && 0.2< 1/3);
+            console.log('logical OR operator');
+            console.log(true || false);
+            console.log('logical NOT operator');
+            console.log(!true)
+            
+
+            
+            console.log('truthy value')
+            if(5){  //5 makes condition true so 5 is call truthy value
+                console.log('truthy');
+            }
+            const cartQuantity=7
+            if (cartQuantity){
+                console.log('cart has products');
+            }
+            else{
+                console.log('cart is empty');
+            }
+
+            //falsy value examples 
+            console.log(!0);
+            console.log('text'/5); //NaN(not a number)
+            let variable1;
+            console.log(variable1); //undefine value
+            
+
+            //ternary operator
+            const result = true ? 'truthy':'falsy';  //(?) for if and (:) for else
+            console.log(result); 
+
+            //guard operator
+            false && console.log('hello');
+
+            const msg=false && 'hello';
+            console.log(msg);
+
+            const msg1=5 && 'hii';
+            console.log(msg1);
+
+            //default operator
+            const currency='EUR' || 'USD';
+            console.log(currency)
+
+            const amount=undefined || 'USD';
+            console.log(amount)
+
+
+        </script>
+    </body>
+</html>

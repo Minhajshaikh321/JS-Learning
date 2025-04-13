@@ -1,0 +1,82 @@
+<!-- 7k. Create a copy of the Cart Quantity project from exercise 61.
+•Create a function 'updateCartQuantity' and reuse the code. -->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>7k-html</title>
+    </head>
+    <body>
+        <h3>Cart quantity function</h3>
+
+        <button onclick="
+            console.log(`Cart quantity: ${cartQuantity}`)"
+        >
+            Show quantity
+        </button>
+
+        <button onclick="updateCartQuantity('+',1);">
+            Add to cart
+        </button>
+
+        <button onclick="updateCartQuantity('+',2);"> 
+            +2 
+        </button>
+
+        <button onclick="updateCartQuantity('+',3);">
+         +3 
+        </button>
+
+        
+        <button onclick="updateCartQuantity('+',4);">
+         +4
+        </button>
+
+        <button onclick="updateCartQuantity('+',5);">
+         +5
+        </button>
+
+        <button onclick="updateCartQuantity('-',1);">
+         Remove from cart
+        </button>
+
+        
+        <button onclick="updateCartQuantity('-',2);">
+           -2
+        </button>
+
+        <button onclick="updateCartQuantity('-',3);">
+          -3
+        </button>
+
+        <button onclick="
+            cartQuantity*=0
+            console.log(`Cart was reset.`)
+            console.log(`Cart quantity: ${cartQuantity}`)"
+        >
+         Reset cart
+        </button>
+
+        <script>
+            let cartQuantity=0;
+            let value=0
+            function updateCartQuantity(op,value){
+                if (cartQuantity >= 10){
+                    alert('The cart is full');
+
+                }
+                else if(cartQuantity<0){
+                alert('Not enough items in the cart');
+                }    
+                else if (op==='+'){
+                    cartQuantity+=value
+                }
+                else if (op==='-'){
+                    cartQuantity-=value
+                }
+
+                console.log(cartQuantity);
+                return cartQuantity
+            }
+        </script>
+    </body>
+</html> 

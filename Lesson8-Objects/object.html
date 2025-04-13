@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-js</title>
+</head>
+<body>
+    <script>
+        const products={ //products is object
+            name:'socks',  //name is property and socks is value
+            price:100
+        };
+        console.log(products);
+        console.log(products.name);  //this syntax is called dot notation
+        console.log(products.price);
+
+        //modify property
+        products.name='shoes';
+        console.log(products);
+        
+        //add new property
+        products.newProperty=true;  
+        console.log(products);
+
+        //delete property
+        delete products.newProperty;
+        console.log(products);
+
+        //check type of object
+        console.log(typeof products);
+
+        const products2={
+            name:'shirt',
+            ['delivery-time']:'1 day',
+            rating:{
+                'star':4.5,
+                'count':78
+            },
+            fun:function function1(){
+                console.log('function inside object');
+            }
+        };
+
+        console.log(products2);
+        console.log(products2.name);  //dot notation
+        console.log(products2['name']); //bracket notation
+        // console.log(products2.delivery-time);  //givee error time error
+        console.log(products2['delivery-time']);  //give output undefine
+        console.log(products2.rating.count);
+        products2.fun();
+
+        console.log(typeof console);  //console is nothing but a object
+        console.log(typeof console.log); //console.log is function inside object and this is called method
+    </script>
+</body>
+</html>

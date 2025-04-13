@@ -1,0 +1,83 @@
+JS is technology use to create websites
+3 thechonlogies has been use in frotend (html,css,js)
+1)Html-create creates the content of websites
+2)CSS changes the appearance
+3)JS makes it interactive
+
+
+Q.What is JS and how does it work?
+A. a)Giving instructions to a computer (code)
+   b)the computer follows our instructions(runningthe code)
+   c)JS is case senstive language
+
+Q.What is syntax mean?
+A.a)rules that we have to follow when using a programming language
+    b)similar to english(grammar)
+    c)in programming,we have to follow rhe rules of syntax exactly
+
+Q.number rules in js
+A.a)2,3,4 is integer
+    b)2.2 ,8,2 is floats
+
+# 0.1+0.2 //op is 0.30000000000000004 thats beacuse computer know 0,1 but,human knows 0,1,2....9
+
+Q)Whats is string in js
+A.Strings are for storing text,strings are written with quotes
+
+Q)what is character and escape character
+A.Character can be 
+a-letter(a,b,c)  eg: 'hello'has 5 characters 1.h  2.e  3.l  4.l  5.o
+b-symbol(!,@,#)
+c-number(1,2,3)
+d-escape character \'
+
+# ${} insert value directly into string
+
+Q)type to create string
+A)three ways to create string in js
+1)'...'
+2)"..."
+3)`...`(template string)
+
+Q)what is variable
+A.variable is like container
+
+Q)variable restriction
+A.1-cant use special word eg let let=4
+  2-cant start with num eg let 2name=3  
+  3-cant use special character and spaces 
+  eg- let nme#$%^@=76;
+      let name person='john';  
+
+Q)naming convention of variable
+A.1-let $name='john';
+  2-let _name='sam';
+  3-camelCase let cartQuantity=0;
+  4-PascalCase let CartQuantity=0;
+  5-kebab-case let cart-quantity=0; (doesn't work in js it works in html,css)
+  6-snake_case let cart_quantity=0;
+
+Q)what are booleans?
+A.booleans are anpther type of value -true,false  
+
+Q)comparison operator
+A.1(..)
+  2*/
+  3+-
+  4.comparison operators
+  5.Logical operators
+
+Q)what is truthy and falsy value in js
+A.1-Truthy: Values that evaluate to true in a boolean context.
+Examples: "hello", 1, [], {}, true
+2-Falsy: Values that evaluate to false in a boolean context.
+Falsy values:false,0,"" (empty string),null,undefined,NaN
+
+Q) what r shorcuts for if statement?
+A.1-Ternary operators ?.
+  2.Guard operators &&
+  3.Default operators ||
+
+
+Q)why do we need to use functions?
+A.A function let us reuse the code,A JavaScript function is executed when "something" invokes it (calls it).

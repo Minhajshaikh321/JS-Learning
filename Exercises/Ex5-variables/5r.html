@@ -1,0 +1,111 @@
+<!-- 5r. Create the rest of the buttons in the
+calculator. To create multiple rows
+of buttons, put the buttons inside
+<p> elements like this:
+<p>
+<button>1</button>
+<button>2</button>
+</p>
+<p>
+<button>4</button>
+<button>5</button>
+ -->
+
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
+    <body>
+        <!-- first row -->
+         <h3>Calculator</h3>
+        <p>
+            <button onclick="calculation+='1'
+            console.log(calculation)">1</button>
+
+            <button onclick="calculation+='2'
+            console.log(calculation)">2</button>
+
+            <button onclick="calculation+='3'
+            console.log(calculation);
+            ">3</button>
+
+            <button onclick="
+            calculation+=' + ';
+            console.log(calculation);">+</button>
+
+        </p>
+        <!-- 2nd row -->
+        <p>
+            <button onclick="calculation+='4'
+            console.log(calculation)">4</button>
+
+            <button onclick="calculation+='5'
+            console.log(calculation)">5</button>
+
+            <button onclick="calculation+='6'
+            console.log(calculation);
+            ">6</button>
+
+            <button onclick="
+            calculation+=' - ';
+            console.log(calculation);">-</button>
+
+        </p>
+        <!-- 3rd row -->
+        <p>
+            <button onclick="calculation+='7'
+            console.log(calculation)">7</button>
+
+            <button onclick="calculation+='8'
+            console.log(calculation)">8</button>
+
+            <button onclick="calculation+='9'
+            console.log(calculation);
+            ">9</button>
+
+            <button onclick="
+            calculation += ' *';
+            console.log(calculation);">*</button>
+            
+
+        </p>
+        <!-- 4th row -->
+        <p>
+            <button onclick="calculation+='0'
+            console.log(calculation)">0</button>
+
+            <button onclick="calculation+='.';
+            console.log(calculation);
+            ">.</button>
+
+            <button onclick="
+            calculation=eval(calculation);
+            console.log(calculation);
+            ">=</button>
+
+            <button onclick="calculation+=' / ';
+            console.log(calculation);
+            ">/</button>
+            
+
+        </p>
+        <p>
+            <button onclick="calculation='';
+            console.log('Cleared.');
+            ">Clear</button>
+        </p>
+
+        <script>
+           let calculation='';
+        </script>
+
+        <!-- notes
+         Why you should avoid eval():
+        Security risk – If the string comes from user input, it can run arbitrary code.
+        Performance hit – Slower than parseInt, Number, or +.
+        Unnecessary – Simpler, safer methods exist.
+         -->
+    </body>
+    </html>    

@@ -1,0 +1,39 @@
+<!-- 6i. Let's say we're trying to guess the result. Create a variable called
+'guess' and save your guess ('heads' or 'tails').
+• If your guess matches the result, display 'You win!' in the console
+• If your guess does not match the result, display 'You lose!' -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>coin</title>
+</head>
+<body>
+    <p>Coin guess</p>
+   <script>
+       const num=Math.random();
+       let result=''
+       console.log(num);
+       if (num<0.5){
+        result='heads'
+        console.log(result);
+       }
+       else {
+        result='tail'
+        console.log(result);
+       }
+
+       const guess='heads';
+       if (result===guess){
+        console.log('You win!');
+       }
+       else{
+        console.log('You lose!')
+       }
+
+
+   </script>
+</body>
+</html>

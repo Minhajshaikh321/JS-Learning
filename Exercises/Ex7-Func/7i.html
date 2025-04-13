@@ -1,0 +1,46 @@
+<!-- 7i. Update convertLength so that if you give it an invalid unit, it will
+return `Invalid unit: ${unit}`.
+·convertLength(5, 'Ibs', 'Ibs') => 'Invalid unit: Ibs' -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length-7i</title>
+</head>
+<body>
+    <script>
+        function convertLength(lg,lgfrom,lgto){
+            if (lgfrom!==`km`&&lgfrom!==`miles`&&lgfrom!==`ft`) {
+                return `invalid unit ${lgfrom}`
+            }
+            else if (lgto!==`km`&&lgto!==`miles`&&lgto!==`ft`){
+                return `invalid unit ${lgto}`
+            }
+            if (lgfrom===`miles` && lgto===`km`){
+                return `${lg*1.6} km`
+            }
+            else if(lgfrom===`km` && lgto===`miles`){
+                return `${lg/1.6} miles`
+            }
+            else if(lgfrom===lgto){
+                return `${lg} ${lgto}`
+            }
+            else if (lgfrom===`miles` && lgto===`ft`){
+                return `${lg*5280} ft`
+            }
+            else if(lgfrom===`km` && lgto===`ft`){
+                return `${lg*3281} ft`
+            }
+
+        }
+        console.log(convertLength(5, 'miles', 'km')); // '8 km'
+        console.log(convertLength(5, 'miles', 'ft')); // '26400 ft'
+        console.log(convertLength(5, 'km', 'ft')); // '16405 ft'
+        console.log(convertLength(50, 'km', 'km')); //50km
+        console.log(convertLength(5, 'Ibs', 'Ibs'));
+        console.log(convertLength(5, 'km', 'Ibs'));
+    </script>
+</body>
+</html>
