@@ -81,3 +81,5 @@ A.1-Ternary operators ?.
 
 Q)why do we need to use functions?
 A.A function let us reuse the code,A JavaScript function is executed when "something" invokes it (calls it).
+
+null=intentionally want something to be empty

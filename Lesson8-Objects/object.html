@@ -7,6 +7,8 @@
 </head>
 <body>
     <script>
+        /*
+
         const products={ //products is object
             name:'socks',  //name is property and socks is value
             price:100
@@ -52,6 +54,29 @@
 
         console.log(typeof console);  //console is nothing but a object
         console.log(typeof console.log); //console.log is function inside object and this is called method
+        console.log(JSON.stringify(products2));    //convert object to json
+        const jsonStr=JSON.stringify(products2)
+        console.log(JSON.parse(jsonStr));        //json to javascript object
+        console.log(typeof jsonStr)
+        */
+       console.log('hello'.length);
+       console.log('hello'.toUpperCase());
+       console.log('MINHAJ'.toLowerCase());
+
+       const object1={message:'hello'};
+       const object2=object1; //copy by reference
+       object1.message='js code';
+       console.log(object1);
+       console.log(object2);
+
+       const object3={message:'js code'};
+       console.log(object3===object1);  //compares the ref not the value inside it
+       console.log(object2===object1);
+       
+       const object4={message:'good work'};
+       //const message=object4.message;
+       const {message}=object4;  //this is called destructuring
+       console.log(message)
     </script>
 </body>
 </html>
