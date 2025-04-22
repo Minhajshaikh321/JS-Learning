@@ -1,0 +1,54 @@
+<!-- 8i. We'll improve the coin flip game from exercise 6j to be like the rock
+paper scissors game.
+•Copy the code from exercise 6j (see the solution for 6j if needed).
+•Create 2 buttons to play the game heads tails
+• When clicking 'heads' play the game with guess = 'heads'.
+• When clicking 'tails' play the game with guess = 'tails'.
+• Create a function ‘playGame(guess)' to reuse the code. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>coin -8i</title>
+</head>
+<body>
+    <p>Coin guess</p>
+    <button onclick="
+    console.log(playGame(`heads`));">
+    Heads</button>
+    <button onclick="
+    console.log(playGame(`tails`));">Tails</button>
+   <script>
+
+    //    const num=Math.random();
+    //    let result=''
+    //    console.log(num);
+    //    if (num<0.5){
+    //     result='heads'
+    //     console.log(result);
+    //    }
+    //    else {
+    //     result='tail'
+    //     console.log(result);
+    //    }
+
+    //    let guess='heads';
+    //    console.log(guess===result?'You win':'You lose')
+       function playGame(guess){
+        // console.log(guess);
+        if (guess==='heads'){
+            return guess
+            // console.log(guess);
+        }
+        else{
+            return guess
+            // console.log(guess);
+        }
+        // console.log(guess);
+       };
+    //    console.log(playGame);
+   </script>
+</body>
+</html>

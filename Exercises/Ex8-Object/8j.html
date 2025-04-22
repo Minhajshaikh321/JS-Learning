@@ -1,0 +1,42 @@
+<!-- 8j. Create a score object { wins: 0, losses: 0 }, update the score each time
+after playing, and display the score in the console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>coin -score</title>
+</head>
+<body>
+    <p>Coin guess</p>
+
+    <button onclick="
+    playGame(`heads`);">
+    Heads</button>
+
+    <button onclick="
+    playGame(`tails`);">
+    Tails</button>
+
+   <script>
+        const score ={ wins: 0, losses: 0 };
+        function playGame(guess){
+        const num=Math.random();
+
+        const result = num < 0.5 ? 'heads' : 'tails';
+        console.log(guess === result ? 'You win!' : 'You lose');
+
+        if (guess===result){
+            score.wins ++;
+        }
+        else{
+            score.losses ++;
+        }
+       
+       console.log(score);
+       };
+
+</script>
+</body>
+</html>

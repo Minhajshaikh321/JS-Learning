@@ -73,10 +73,21 @@
        console.log(object3===object1);  //compares the ref not the value inside it
        console.log(object2===object1);
        
-       const object4={message:'good work'};
+       const object4={message:'good work',price:279};
        //const message=object4.message;
-       const {message}=object4;  //this is called destructuring
-       console.log(message)
+       const {message,price}=object4;  //this is called destructuring
+       console.log(message);
+       console.log(price);
+
+       const object5={message,
+        // method:function func1(){
+        // console.log('func1 message');
+        method(){
+            console.log('method');
+        }
+       };
+       console.log(object5);
+       object5.method();
     </script>
 </body>
 </html>

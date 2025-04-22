@@ -1,0 +1,46 @@
+<!-- 8k. Use localStorage to save and load the score (hint: you'll need to use
+JSON.stringify() to convert the score object to a string). -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>coin -score</title>
+</head>
+<body>
+    <p>Coin guess</p>
+
+    <button onclick="
+    playGame(`heads`);">
+    Heads</button>
+
+    <button onclick="
+    playGame(`tails`);">
+    Tails</button>
+
+   <script>
+        let score =JSON.parse(localStorage.getItem('score')
+        )||{wins: 0, losses: 0};
+        // const score ={ wins: 0, losses: 0 };
+        function playGame(guess){
+        const num=Math.random();
+
+        const result = num < 0.5 ? 'heads' : 'tails';
+        console.log(guess === result ? 'You win!' : 'You lose');
+
+        if (guess===result){
+            score.wins ++;
+        }
+        else{
+            score.losses ++;
+        }
+       
+       console.log(score);
+       localStorage.setItem('score',JSON.stringify(score));
+       };
+
+</script>
+</body>
+</html>
