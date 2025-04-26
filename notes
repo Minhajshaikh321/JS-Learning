@@ -83,3 +83,12 @@ Q)why do we need to use functions?
 A.A function let us reuse the code,A JavaScript function is executed when "something" invokes it (calls it).
 
 null=intentionally want something to be empty
+
+DOM-
+1.document.querySelector()-let us get any element from page and put inside javascript
+2.Every html element has a property .innerHTML
+3.clicks,keydowns=>events
+4.onclick,onkeydown=>event listeners
+5.onscroll=scrolling
+6.onmouseenter=hovering over
+7.onmouseleave=stop hovering over

@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
+    <title>DOM1</title>
 </head>
 <body>
     <button>hello</button>
+    <button class="js-btn">second</button>
+
+
+
     <script>
         /*
         document.body.innerHTML='hello';
         document.title='good job!';
-        */
+    
 
        console.log(document.title);
        document.title='changed dom';
@@ -22,6 +26,23 @@
        console.log(document.body.innerHTML);
     //    document.body.innerHTML='changed html';
        document.body.innerHTML='<button>hello btn</button>';
+       */
+
+
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML='changes';
+
+        const buttonElement=document.querySelector(".js-btn");
+        console.log(buttonElement);
+
+        String(25);
+        console.log('25'-5);
+        console.log('25'+5);
+
+        window.document;
+        window.console.log('window');  //js automatically understand that we just use console.log
+        window.alert;
+
     </script>
 </body>
 </html>
