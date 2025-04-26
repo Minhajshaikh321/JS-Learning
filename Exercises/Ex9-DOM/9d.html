@@ -1,0 +1,24 @@
+<!-- 9d. Create a text box (<input>) and a submit button. When clicking
+'Submit', display 'Your name is: ${text}' on the page (${text} = the text
+inside the text box) (hint: use .value to get the text inside an <input>). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-9d</title>
+</head>
+<body>
+    <input type="text" class="ip">
+    <button onclick="nameDisplay()">Submit</button>
+    <p class="name"></p>
+    <script>
+        function nameDisplay(){
+            const ip=document.querySelector('.ip')
+            console.log(ip.value);
+            document.querySelector('.name').innerHTML=ip.value;
+        }
+    </script>
+</body>
+</html>

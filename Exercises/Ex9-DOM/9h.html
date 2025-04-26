@@ -1,0 +1,34 @@
+<!-- 9h. Let's create the project on the right:
+1.Whenever we type in the text box,
+2.update the text on the page. onkeyu
+3.To do this, we'll learn another
+onkeyu
+event called <input onkeyup="...">.
+4.This runs code after we press a key and release it (key comes up). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-9h</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-9h</title>
+</head>
+<body>
+    <input type="text" class="ip" onkeyup="onKeyFunc();">
+    <p class="msg"></p>
+    <script>
+        function onKeyFunc(event){
+            const ipElement=document.querySelector('.ip');
+            document.querySelector('.msg').innerHTML=ipElement.value;
+        }
+    </script>
+
+</body>
+</html>

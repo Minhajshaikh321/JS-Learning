@@ -1,0 +1,63 @@
+<!-- Challenge Exercises
+9g. Create a file 9g.html and copy the code from 09-dom-projects.html
+into this file. In the Amazon Shipping Calculator, enter a cost of 7.99
+and click 'Calculate'. What issue do you see? Find a fix for this issue.
+7.99
+$17.990000000000002
+Calculate
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>DOM-9g</title>
+ </head>
+ <body>
+     <p>Youtube subscribe button</p>
+ 
+     <button onclick="subscribe();" class="js-subscribe-btn">Subscribe</button>
+ 
+     <p>Amazon shipping calculator</p>
+ 
+     <input type="text" class="js-input" placeholder="Cost of order" onkeydown="handleCostKeyDown(event);">
+ 
+     <button onclick="calculateTotal();">calculate</button>
+     <p class="js-total-cost"></p>
+ 
+         <script>
+             function handleCostKeyDown(event){
+                 if(event.key==='Enter'){
+                     calculateTotal();
+                 }
+             }
+ 
+             function calculateTotal(){
+                 const inputElement= document.querySelector('.js-input');
+                 let cost=Number(inputElement.value)*100; //input value type is string so convert here into number 
+                 console.log(cost);
+                 if (cost<4000){
+                     cost=cost+1000;
+                     console.log(cost)
+ 
+                 }
+ 
+                 document.querySelector('.js-total-cost')
+                     .innerHTML=`$${cost/100}`;
+             }
+ 
+             function subscribe(){
+                 const buttonElement= document.querySelector('.js-subscribe-btn');
+                 if (buttonElement.innerText==='Subscribe'){
+                     buttonElement.innerHTML='Subscribed'
+                 }
+                 else{
+                     buttonElement.innerHTML='Subscribe'
+                 }
+ 
+             }
+             console.log(Math.round(7.88));
+         </script>
+ </body>
+ </html>

@@ -1,0 +1,76 @@
+<!-- 9i. We'll improve the Cart Quantity project.
+1.Make a copy of exercise 71 (see the solution for 71 if needed).
+2.Create a paragraph (<p></p>) to display the quantity.
+2.Whenever we update the quantity, display it on the page instead
+of in the console. Also, display the quantity when page first loads.
+Show Quantity Add to Cart +2 +3 +4 +5 Remove from cart -2
+Cart quantity: 1 -->
+
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>9i-html</title>
+    </head>
+    <body>
+        <h3>Cart quantity function</h3>
+
+        <button onclick="displayQuantity();">
+            Show quantity
+        </button>
+
+        <button onclick="updateCartQuantity(1);">Add to cart</button>
+
+        <button onclick="updateCartQuantity(2);"> +2 </button>
+
+        <button onclick="updateCartQuantity(3);">+3 </button>
+
+        <button onclick="updateCartQuantity(4);">+4</button>
+
+        <button onclick="updateCartQuantity(5);">+5</button>
+
+        <button onclick="updateCartQuantity(-1);">Remove from cart</button>
+
+        <button onclick="updateCartQuantity(-2);">-2</button>
+
+        <button onclick="updateCartQuantity(-3);">-3 </button>
+
+        <button onclick="
+            cartQuantity=0;
+            console.log(`Cart was reset.`);
+            displayQuantity();
+            // console.log(`Cart quantity: ${cartQuantity}`)"
+        >
+         Reset cart
+        </button>
+        <p class="cartResult" onclick="updateCartQuantity();"></p>
+        <script>
+            let cartQuantity=0;
+            function updateCartQuantity(change){
+
+                if (cartQuantity+change > 10){
+                    alert('The cart is full');
+
+                }
+
+                else if(cartQuantity+change<0){
+                alert('Not enough items in the cart');
+                }    
+
+                cartQuantity+=change
+                console.log(`cartQuantity is ${cartQuantity}`);
+                displayQuantity();
+                // document
+                    // .querySelector('.cartResult').innerHTML=`cartQuantity ${cartQuantity}`;
+                // console.log(cartResult);
+                return cartQuantity
+            }
+
+            function displayQuantity(){
+                console.log(cartQuantity);
+                document
+                    .querySelector('.cartResult').innerHTML=`cartQuantity ${cartQuantity}`;
+
+            }
+        </script>
+    </body>
+</html> 
