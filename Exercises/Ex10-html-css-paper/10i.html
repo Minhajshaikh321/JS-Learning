@@ -1,0 +1,137 @@
+<!-- 10i. We'll style the calculator project using CSS.
+• Make a copy of exercise 9j.
+• In your browser, go to:
+supersimple.dev/projects/calculator-final
+This is the final design for the project.
+• Using CSS, style the calculator project to
+look like the final design on the right.  -->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dom-10i</title>
+        <style>
+            body{
+                margin-left: 20px;
+                background-color: black;
+                font-family: Arial;
+            }
+            button{
+                background-color: rgb(90, 85, 85);
+                border: none;
+                border-radius: 30px;
+                height: 60px;
+                width: 60px;
+                padding: 10px;
+                font-size: 25px;
+                color: white;
+            }
+            .result{
+                color: white;
+                font-size: 40px;
+                margin-top: 10px;
+                /* font-weight: bold; */
+            }
+            .operator{
+                background-color: rgb(254, 160, 10);
+            }
+        </style>
+    </head>
+    <body>
+
+         <p class="result">89</p>
+
+        <p>
+            <button onclick="updateCalculation(1);">
+                1
+            </button>
+
+            <button onclick="updateCalculation(2);">
+                2</button>
+
+            <button onclick="updateCalculation(3);
+            ">3</button>
+
+            <button class="operator" onclick="
+            updateCalculation(' + ');">+</button>
+
+        </p>
+        <!-- 2nd row -->
+        <p>
+            <button onclick="updateCalculation(4)">4</button>
+
+            <button onclick="updateCalculation(5)">5</button>
+
+            <button onclick="updateCalculation(6);
+            ">6</button>
+
+            <button class="operator" onclick="updateCalculation(' - ')">-</button>
+
+        </p>
+        <!-- 3rd row -->
+        <p>
+            <button onclick="updateCalculation(7)">7</button>
+
+            <button onclick="updateCalculation(8)">8</button>
+
+            <button onclick="updateCalculation(9)">9</button>
+
+            <button class="operator" onclick="updateCalculation(' * ')">*</button>
+            
+
+        </p>
+        <!-- 4th row -->
+        <p>
+            <button onclick="updateCalculation(0)">0</button>
+
+            <button onclick="updateCalculation('.');
+            ">.</button>
+
+            <button onclick="
+            calculation=eval(calculation);
+            // console.log(calculation);
+            displayResult();
+            localStorage.setItem('calculation',calculation);
+            ">=</button>
+
+            <button class="operator" onclick="updateCalculation(' / ')
+            ">/</button>
+            
+
+        </p>
+        <p>
+            <button
+            style="font-size: 18px;"
+             onclick="calculation='';
+            // console.log('Cleared.');
+            displayResult();
+            localStorage.setItem('calculation',calculation);
+
+            ">Clear</button>
+        </p>
+
+        <script>
+            // let calculation='';
+            let calculation=localStorage.getItem('calculation')|| '';
+            displayResult();
+           function updateCalculation(value){
+            calculation +=value;
+            displayResult();
+           localStorage.setItem('calculation',calculation);
+
+            }
+            function displayResult(){
+                document.querySelector('.result').innerHTML=calculation;
+                console.log(document.querySelector('.result').innerHTML);
+            }
+        </script>
+
+        <!-- notes
+         Why you should avoid eval():
+        Security risk – If the string comes from user input, it can run arbitrary code.
+        Performance hit – Slower than parseInt, Number, or +.
+        Unnecessary – Simpler, safer methods exist.
+         -->
+</body>
+</html>    

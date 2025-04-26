@@ -92,3 +92,4 @@ DOM-
 5.onscroll=scrolling
 6.onmouseenter=hovering over
 7.onmouseleave=stop hovering over
+8.classList give a control of the class attr

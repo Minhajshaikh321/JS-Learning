@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Rock paper scissor style</title>
+    <link rel="stylesheet" href="/Lesson10-rock-paper-scissor/style/rockPaperScissor.css">
+</head>
+<body>
+    <p class="title">Rock Paper Scissors</p>
+    <button onclick=" playGame(`rock`);" class="move-btn">
+        <img  src="/Lesson10-rock-paper-scissor/images/rock-emoji.png" class="move-icon" alt="">
+    </button>
+
+    <button onclick="playGame(`paper`);" class="move-btn">
+        <img src="/Lesson10-rock-paper-scissor/images/paper-emoji.png" class="move-icon" alt="" >
+    </button>
+
+    <button onclick="playGame(`scissors`);" class="move-btn">
+        <img src="/Lesson10-rock-paper-scissor/images/scissors-emoji.png" class="move-icon" alt="">
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves">
+        <!-- You <img src="/Lesson10-html-css-js/images/paper-emoji.png" class="move-icon" alt="">
+        <img src="/Lesson10-html-css-js/images/paper-emoji.png" class="move-icon" alt=""> Computer -->
+    </p>
+    <p class="js-score score"></p>
+
+
+    <button onclick="
+            score.wins=0;score.losses=0,score.ties=0;
+            localStorage.removeItem('score');
+            updateScoreElement();
+            "
+            class="reset-score-btn">
+        Reset Score
+    </button>
+
+    <!-- Algorithm
+     when we click a button
+     1.computer randomly select a move
+     2.compare the moves to get a result
+     3.update a score
+     4.display the result in popup
+    -->
+
+    <script src="/Lesson10-rock-paper-scissor/scripts/rockPaperScissor.js">
+    </script>
+</body>
+
+</html>

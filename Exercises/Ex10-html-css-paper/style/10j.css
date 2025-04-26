@@ -1,0 +1,24 @@
+body{
+    margin-left: 20px;
+    background-color: black;
+    font-family: Arial;
+}
+button{
+    background-color: rgb(90, 85, 85);
+    border: none;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    font-size: 25px;
+    color: white;
+}
+.result{
+    color: white;
+    font-size: 40px;
+    margin-top: 10px;
+    /* font-weight: bold; */
+}
+.operator{
+    background-color: rgb(254, 160, 10);
+}

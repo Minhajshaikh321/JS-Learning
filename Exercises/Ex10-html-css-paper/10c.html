@@ -1,0 +1,31 @@
+<!-- 
+ 10c.classList has another method, classList.contains('class-name'),
+which checks if an element has a class.
+1.Create a button: <button class="js-button">Test</button>
+2.Use document.querySelector() and classList.contains('js-button')
+to check if this button has the class 'js-button'.
+3.console.log() the result. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX-10</title>
+</head>
+<body>
+    <button id="testid" class="js-button" onclick="classContain();">Test</button>
+    <script>
+        function classContain(){
+        const button = document.getElementById("testid");
+        if (button.classList.contains("js-button")){
+            console.log('button active');
+        }
+        else{
+            console.log('button is not active');
+
+        }
+        }   
+    </script>
+</body>
+</html>
