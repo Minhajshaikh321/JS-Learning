@@ -1,0 +1,24 @@
+<!-- 11g. Create a loop that takes an array of numbers and creates a new array
+where each number is increased by 1.
+•[1, 2, 3] => [2, 3, 4] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-11g</title>
+</head>
+<body>
+    <script>
+        nums=[1, 2, 3];
+        raisNums=[];
+        for(let i=0;i<nums.length;i++){
+            const num=nums[i];
+            // console.log(num);
+            raisNums.push(num+1);
+        }
+        console.log(raisNums);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- 11i. Create a function addNum(array, num) that takes an array of numbers
+and returns an array where each number is increased by 'num'.
+1.addNum([1, 2, 3], 2) => [3, 4, 5]
+2.addNum([1, 2, 3), 3) => [4, 5, 6]
+3.addNum([-2, -1, 0, 99], 2) => [0, 1, 2, 101] -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-11i</title>
+</head>
+<body>
+    <script>
+
+        nums=[1, 2, 3];
+        n1=2;
+        console.log(addNum(nums,n1));
+
+        nums2=[1, 2, 3];
+        n2=3;
+        console.log(addNum(nums2,n2));
+
+
+        nums3=[-2, -1, 0, 99];
+        n3=2
+        console.log(addNum(nums3,n3));
+
+
+        function addNum(array,num){
+            numsOne=[];
+            for(let i=0;i<array.length;i++)
+                numsOne.push(array[i]+num)
+                // console.log(numsOne);
+            return numsOne;
+        }
+        
+    </script>
+</body>
+</html>

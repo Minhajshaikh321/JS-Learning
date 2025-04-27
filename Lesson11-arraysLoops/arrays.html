@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays-Loops-JS</title>
+</head>
+<body>
+    <script>
+        
+        //JS-Array
+        const myArray=[10,20,30];
+        console.log(myArray);
+        console.log(myArray[0]);   //get the data of list by indexing same as python list
+
+        myArray[0]=97;   //set new value to array
+        console.log(myArray);
+
+        console.log(typeof [1,2,3]);  //array is also an object
+       
+        console.log(Array.isArray([1,2]));   //to check it is array or not
+        console.log(Array.isArray(myArray));
+        console.log(Array.isArray('hello'));
+
+
+
+        //Arrays properties and methods
+        
+        console.log(`myArray length: ${myArray.length}`);    //check the length of array
+        
+        myArray.push(100);      //add value to the end of array
+        console.log(`myArray push: ${myArray}`);  
+
+        myArray.splice(0,1); //remove the value from array take two arguments 1.index we want to remove 2.numbers of value to remove
+        console.log(`myArray splice: ${myArray}`);
+
+        
+        
+        //JS-Loop
+        //1.WHile loop
+        let i=1;    //loop variable 
+        while(i<=5){  //loop condition  it take 5 iteration
+            console.log(i); //loop body
+            i++;  //if we remove this step it goes in infinite loop
+        }
+
+        //2.For loop(shortend version of while loop)
+        for(let i=1;i<=5;i++){ 
+            console.log(i);
+        }
+
+        let randomNum=0
+        while(randomNum<0.5){
+            randomNum=Math.random()
+        }
+        console.log(randomNum);
+
+        
+        const TodoList=[
+            'make dinner',
+            'play game',
+            'wash dishes'
+        ];
+
+        for(let i=0;i<TodoList.length;i++){  //i vriable is used as shorthand for index
+            const element=TodoList[i];
+            console.log(element);
+        }
+        
+
+        //Accumulator pattern
+
+        const nums=[1,2,3];
+        let total=0;
+        for(let i=0;i<nums.length;i++){
+            const num=nums[i];
+            total=total+num;
+        }
+        console.log(total);
+
+
+        const numsDouble=[];
+        for(let i=0;i<nums.length;i++){
+            const num=nums[i];
+            numsDouble.push(num*2);
+        }
+        console.log(numsDouble);
+
+        result={apple:1,mango:2};
+        console.log(result);
+
+    </script>
+</body>
+</html>

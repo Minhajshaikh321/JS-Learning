@@ -1,0 +1,35 @@
+<!-- 11b. Create a function getLastValue(array) that takes an array and returns
+the last value in the array. Hint: array indexes start at O so the last
+index is the number of values in the array minus 1
+(lastIndex = array.length - 1).
+•getLastValue([1, 20, 22, 24, 5]) => 5
+•getLastValue(['hi', 'hello', 'good']) => 'good' -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-11b</title>
+</head>
+<body>
+    <script>
+        
+        nums=[1, 20, 22, 24];
+        getLastValue(nums);
+        console.log(getLastValue(nums));
+
+
+        numSt=['hi', 'hello', 'good'];
+        console.log(getLastValue(numSt));
+
+
+        function getLastValue(array){
+            const lastnum=array[array.length-1]
+            // console.log(lastnum);
+            return lastnum;
+        }
+
+    </script>
+</body>
+</html>

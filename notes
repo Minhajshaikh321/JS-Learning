@@ -93,3 +93,13 @@ DOM-
 6.onmouseenter=hovering over
 7.onmouseleave=stop hovering over
 8.classList give a control of the class attr
+
+
+Q)what are arrays
+A.another type of values
+.represent list of a values
+
+
+Q) while vs for loop
+A.standard loop=>for loop
+  non standard loop=>while loop

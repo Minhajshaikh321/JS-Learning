@@ -1,0 +1,35 @@
+<!-- 11h. Create a function addOne(array) that takes an array of numbers and
+returns an array where each number is increased by 1.
+• addOne([1, 2, 3]) => [2, 3, 4]
+• addOne([-2, -1, 0, 99]) => [-1, 0, 1, 100]
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-11h</title>
+</head>
+<body>
+    <script>
+
+        nums=[1, 2, 3];
+        console.log(addOne(nums));
+
+        numS=[-2, -1, 0, 99];
+        console.log(addOne(numS));
+
+        function addOne(array){
+            numsOne=[]
+            for(let i=0;i<array.length;i++)
+                // console.log(array[i]);
+                numsOne.push(array[i]+1)
+                // console.log(numsOne);
+            return numsOne;
+        }
+        
+    </script>
+</body>
+</html>
