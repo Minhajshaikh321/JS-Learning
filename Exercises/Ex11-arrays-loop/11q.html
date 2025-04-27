@@ -1,0 +1,40 @@
+<!-- 11q. Create a function findIndex(array, word) that searches an array for a
+string (in the 'word' parameter) and returns the index of the first
+appearance of the string. If it doesn't exist in the array, return -1.
+1.findIndex(['green', 'red', 'blue', 'red'], 'red') => 1
+2.findIndex(['green', 'red', 'blue', 'red'], 'yellow') => -1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-11q</title>
+</head>
+<body>
+    <script>
+        console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+        console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+        function findIndex(array, word){
+
+            for(let i=0;i<array.length;i++){
+                // console.log(array[i],word);
+                // console.log(word);
+                // let result=0
+                if(array[i]===word){
+                    // console.log('if loop');
+                    return i;
+                    // word=i;
+                    // console.log(i);
+                    // break;
+                    // console.log(result);
+                }
+                // return word;
+            }
+            return -1;
+        }
+
+    </script>
+</body>
+</html>

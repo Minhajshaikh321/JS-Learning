@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        /*
         
         //JS-Array
         const myArray=[10,20,30];
@@ -89,6 +90,52 @@
         result={apple:1,mango:2};
         console.log(result);
 
+        */
+
+        //array arerefrences
+        const array1=[1,2,3];
+        // const array2=array1; arrays are references so both give same value 
+        const array2=array1.slice();  //slice make two diff array of value
+        array2.push(4);
+        console.log(array1);
+        console.log(array2);
+
+
+        //array destructing
+        const array3=[1,2,3];
+        // console.log(array3[0])
+
+        const [firsValue,secondValue]=[1,2,3];
+
+        // console.log(firsValue);
+        // console.log(secondValue);
+
+        for(let i=1;i<=10;i++){
+            if(i%3===0){
+                continue;       //skip 1 iteration of loop  and increment automatically
+            }
+
+            console.log(i);
+            if(i===8){
+                break;           //exit loop
+            }
+        }
+
+        let i=1;
+        while(i<=10){
+            if(i%3===0){
+                i++;              //manually added this increment either it will goes in infinite loop
+                continue;
+            }
+
+
+
+            console.log(i);
+            i++
+
+        }
+
     </script>
+
 </body>
 </html>

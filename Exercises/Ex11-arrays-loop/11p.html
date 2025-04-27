@@ -1,0 +1,44 @@
+<!-- 11p. Modify 110 so that if 'search' appears multiple times in the array, it will
+console.log() the index of the first appearance of 'search'. Use break;
+1.['hello', 'world', 'search', 'good', 'search'] => console.log(2) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-11p</title>
+</head>
+<body>
+    <script>
+        let strarray=['hello', 'world', 'search', 'good','search']
+        let index=-1
+        for(let i=0;i<strarray.length;i++){
+            // console.log(strarray[i]);
+            // let result=0
+            if(strarray[i]==='search'){
+                index=i;
+                break;
+                // console.log(result);
+            }
+
+        }
+        console.log(index);
+
+        words=['not', 'found'];
+        index=-1;
+        for(let i=0;i<words.length;i++){
+            // console.log(words[i]);
+            // let result=0
+            if(words[i]==='search'){
+                index=i;
+                break;
+                // console.log(result);
+            }
+
+        }
+        console.log(index);
+
+    </script>
+</body>
+</html>

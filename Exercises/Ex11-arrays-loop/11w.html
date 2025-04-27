@@ -1,0 +1,54 @@
+<!-- 11w. Create a copy of exercise 11q, where we created findIndex(). Below it,
+create a function unique(array) that takes an array of strings and
+returns an array where each string only appears once (there are
+no duplicates). Try to use the findIndex() function in your solution.
+1.unique(['green', 'red', 'blue', 'red']) => ['green', 'red', 'blue']
+2.unique(['red', 'green', 'green', 'red']) => ['red', 'green'] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-11w</title>
+</head>
+<body>
+    <script>
+        console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+        console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+        function findIndex(array, word){
+
+            for(let i=0;i<array.length;i++){
+                // console.log(array[i],word);
+                // console.log(word);
+                // let result=0
+                if(array[i]===word){
+                    // console.log('if loop');
+                    return i;
+                    // word=i;
+                    // console.log(i);
+                    // break;
+                    // console.log(result);
+                }
+                // return word;
+            }
+            return -1;
+        }
+        console.log(unique(['green', 'red', 'blue', 'red']));
+        console.log(unique(['red', 'green', 'green', 'red']));
+        function unique(array){
+            let uniqueArray=[]
+            for(let i=0;i<array.length;i++){
+                const word=array[i];
+                if (findIndex(uniqueArray,word)===-1 ){
+                    // console.log('skip');
+                    uniqueArray.push(array[i]);
+                }
+            }
+            return uniqueArray;
+        }
+
+    </script>
+</body>
+</html>

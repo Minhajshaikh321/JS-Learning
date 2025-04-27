@@ -1,0 +1,38 @@
+<!-- 11t. Arrays have a method called .reverse(), which reverses the order of
+the values in the array. Using .reverse(), update exercise 11s to only
+remove the last 2 eggs from the array.
+•removeEgg (['egg', 'apple', 'egg', 'egg', 'ham']) => ['egg', 'apple', 'ham'] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-11t</title>
+</head>
+<body>
+    
+    <script>
+        console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+        function removeEgg(food){
+            const reverseFood=food.reverse()
+            const result=[];
+            let countEgg=0
+            for(let i=0;i<reverseFood.length;i++){
+                if(food[i]==='egg' && countEgg<2){
+                    countEgg++;
+                    // console.log(food[i]);
+                    continue;
+                    // count++;
+                }
+                result.push(reverseFood[i]);
+            }
+            // result.reverse();
+            // console.log(result.reverse());
+            return result.reverse();
+
+        }
+    </script>
+
+</body>
+</html>

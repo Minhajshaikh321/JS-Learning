@@ -1,0 +1,46 @@
+<!-- 11o. Create an array of strings, loop over the array, and check if the string
+'search' is inside the array. If it is, console.log() the index of 'search' in
+in the array. If not, console.log '-1'.
+1.['hello', 'world', 'search', 'good'] => console.log(2)
+2.['not', 'found'] => console.log(-1) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-11o</title>
+</head>
+<body>
+    <script>
+        let strarray=['hello', 'world', 'search', 'good']
+        let index=-1
+        for(let i=0;i<strarray.length;i++){
+            // console.log(strarray[i]);
+            // let result=0
+            if(strarray[i]==='search'){
+                index=i;
+                // break;
+                // console.log(result);
+            }
+
+        }
+        console.log(index);
+
+        words=['not', 'found'];
+        index=-1;
+        for(let i=0;i<words.length;i++){
+            // console.log(words[i]);
+            // let result=0
+            if(words[i]==='search'){
+                index=i;
+                // break;
+                // console.log(result);
+            }
+
+        }
+        console.log(index);
+
+    </script>
+</body>
+</html>
