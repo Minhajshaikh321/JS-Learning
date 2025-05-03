@@ -5,3 +5,24 @@ Todo List project into these files.
 and refresh the page, the todo list should stay the same).
 3.Hint: remember that localStorage only supports strings. You can
 use JSON.stringify() to convert an array to a string. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List-11x</title>
+    <link rel="stylesheet" href="/Exercises/style/11x.css">
+</head>
+<body>
+    <p>Todo List 3 Practice</p>
+    <div class="todo-input-grid">
+        <input class="js-name-input name-input" type="text" placeholder="Todo name">
+        <input class="js-due-date-input date-input" type="date">
+        <button class="add-todo-btn" onclick="addTodo();">Add</button>
+    </div>
+    <div class="js-todo-div todo-grid"></div>
+    
+    <script src="/Exercises/scripts/11x.js"></script>
+</body>
+</html>

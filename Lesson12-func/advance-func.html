@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance functions</title>
+</head>
+<body>
+    <script>
+
+        /*
+        greeting();        //hoisting -dont worry order of code written
+
+        function greeting(){
+            console.log('hello!');
+        }
+
+        // greeting();
+
+        const num=2;
+        const function1= function greeting(){   //func are values so can be save into variables
+            console.log('hello2222!');
+        };
+
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        const function2= function (){   //func are values so can be save into variables
+            console.log('hello annonymous func!');
+        };
+
+        function2();
+
+        const object1={
+            num:2,
+            fun:function (){
+                console.log('hello3');
+            }
+        };
+        object1.fun();
+
+        //function by value
+        function display(param){
+            console.log(param);
+        }
+
+        display(278653);
+
+        //pass a function into a function
+        function run(param){
+            param();          //passing a functio into another function
+        }
+        run(function(){
+            console.log('hello4 run');
+        }
+        );
+
+        */
+
+
+
+        /*
+
+
+        setTimeout(function(){            //set time out take 2 param 1.function to run 
+            console.log('set time out');   
+            
+        }, 3000);     //.how long to wait  before run function
+        //3000 millisecond=3 second
+
+        console.log('next line');   //in cosole this print first and its called asynchronous code
+        //Asynchronous code-wont wait for a line to finish before going to next line synchronous work vice versa
+
+
+        // setInterval(function(){            //set time out take 2 param 1.function to run 
+        //     console.log('interval time');   
+            
+        // }, 3000);
+
+        */
+        
+
+        [
+            'make dinner',
+            'wash dishes',
+            'play game'
+        ].forEach(function(value,index){   //it works same as for loop and it preffered more ///in work same as enumerate in python
+            console.log(index);
+            console.log(value);
+        });
+
+
+
+        console.log('next loop');
+        [
+            'make dinner',
+            'wash dishes',
+            'play game'
+        ].forEach(function(value,index){   
+            console.log('continue loop');
+            if(value='wash dishes'){
+                return;     //it work same as continue in for loop
+            }
+            console.log(index);
+            console.log(value);
+        });
+
+
+    </script>
+</body>
+</html>
