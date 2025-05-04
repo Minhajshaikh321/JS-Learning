@@ -1,0 +1,31 @@
+<!-- 12d. Continuing from exercise 12c, modify the button so that when we
+click it, the text immediately changes to 'Loading...', and then after
+1 second, it changes to 'Finished!'.
+Loading... -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance-func-12d</title>
+</head>
+<body>
+    <button class="btn" onclick="FinishedFun();">Start</button>
+    <Script>
+        
+
+        // setTimeout(FinishedFun,1000);
+
+        function FinishedFun(){
+            console.log('call');
+            document.querySelector('.btn').innerHTML=`Loading`;
+            setTimeout(function(){
+                document.querySelector('.btn').innerHTML=`Finished!`;
+            },1000)
+        }
+
+
+    </Script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+
+    <button class="add" onclick="titleMessage('add');">Add</button>
+    <button class="remove" onclick="titleMessage('remove');">Remove</button>
+
+    <script>
+        let msg=2;
+
+        setInterval(function(){
+            if (document.title==='App')
+            {
+                document.title=`(${msg}) New messages`;
+            }
+            else{
+                document.title==='App';
+            }
+        },2000)
+
+        function titleMessage(op){
+            console.log(op);
+            console.log(msg);
+            if (msg>=1){
+                if (op==='add'){
+                    msg+=1
+                    document.title=`(${msg}) New messages`;
+                }
+                if (op==='remove'){
+                    msg-=1
+                    document.title=`(${msg}) New messages`;
+                }
+            }
+            else{
+                document.title='App';
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

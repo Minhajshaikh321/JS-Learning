@@ -1,0 +1,43 @@
+<!-- Challenge Exercises
+12f. Continuing from 12e, if we click the button, wait 1 to 1.5 seconds, and
+then click the button again, notice that the second time, the message
+disappears very quickly (because the first setTimeout is still running
+and will make the message disappear very soon).
+Modify the code so when we click the button, it "refreshes" the 2
+second wait time (waits for 2 seconds again and removes message).
+Hint: you can cancel the previous setTimeout using clearTimeout()
+Add to cart
+Added
+Incorrect X
+Add to cart
+Added
+Correct -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance-func-12f</title>
+</head>
+<body>
+    <button onclick="cartFunction();">Add to cart</button>
+    <p class="btn-msg"></p>
+    <script>
+        let timeid;
+        function cartFunction(){
+            
+            const msgElement=document.querySelector('.btn-msg')
+            msgElement.innerHTML=`Added`;
+
+            clearTimeout(timeid);
+
+            timeid= setTimeout(function(){
+                msgElement.innerHTML=``;
+            },2000);
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- 12e. Create the 'Add to cart' button below. When clicking this button,
+display the message 'Added' below the button. Then, after 2 seconds,
+remove the message.
+Add to cart
+Added -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance-func-12e</title>
+</head>
+<body>
+    <button onclick="cartFunction();">Add to cart</button>
+    <p class="btn-msg"></p>
+    <script>
+        function cartFunction(){
+            console.log('called');
+            document.querySelector('.btn-msg').innerHTML=`Added`;
+            setInterval(function(){
+                document.querySelector('.btn-msg').innerHTML=``;
+            },2000)
+        }
+    </script>
+</body>
+</html>

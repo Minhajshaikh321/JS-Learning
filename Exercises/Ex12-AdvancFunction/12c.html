@@ -1,0 +1,30 @@
+<!-- 12c. Create the button below. When clicking the button, after 1 second,
+the text inside the button changes to 'Finished!'.
+(Hint: use setTimeout() and the DOM)
+Start -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance-func-12c</title>
+</head>
+<body>
+    <button class="btn" onclick="FinishedFun();">Start</button>
+    <Script>
+        
+
+        // setTimeout(FinishedFun,1000);
+
+        function FinishedFun(){
+            console.log('call');
+            setTimeout(function(){
+                document.querySelector('.btn').innerHTML=`Finished`;
+            },1000)
+        }
+
+
+    </Script>
+</body>
+</html>
