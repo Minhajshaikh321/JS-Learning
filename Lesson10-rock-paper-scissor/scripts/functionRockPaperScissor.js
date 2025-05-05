@@ -19,9 +19,9 @@ if (!score)
 let isAutoPlaying=false;
 let intervalId;
 
-function autoPlay(){
+function autoPlay(){   //use this instead of arrow function 'coz 1)Easier to read 2)Hoisting
     if(!isAutoPlaying){
-        intervalId= setInterval(function(){
+        intervalId= setInterval(()=>{   //used arrow function here
             const playerMove=pickComputerMove();
             playGame(playerMove);
         },2000);
@@ -34,6 +34,35 @@ function autoPlay(){
         isAutoPlaying=false;
     }
 }
+
+document.querySelector('.js-rock-btn')
+    .addEventListener('click',()=>{
+        playGame(`rock`);
+    })
+
+document.querySelector('.js-paper-btn')
+    .addEventListener('click',()=>{
+        playGame(`paper`);
+    })
+
+document.querySelector('.js-scissor-btn')
+    .addEventListener('click',()=>{
+        playGame(`scissors`);
+    })
+
+document.body.addEventListener('keydown',(event)=>{
+    console.log(event.key);
+    if(event.key==='r'){
+        playGame(`rock`);
+    }
+    else if(event.key==='p'){
+        playGame(`paper`);
+    }
+    else if(event.key==='s'){
+        playGame(`scissors`);
+    }
+})    
+
 
 function playGame(playerMove){
     const computerMove=pickComputerMove();
