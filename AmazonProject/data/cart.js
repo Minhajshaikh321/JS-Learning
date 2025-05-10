@@ -1,6 +1,8 @@
 import { products } from "./products.js";
 
-export let cart=[
+export let cart=JSON.parse(localStorage.getItem('cart'));
+if(!cart){
+  cart=[
 
     //we just took product id not name price image this called normalizing data
 
@@ -13,7 +15,16 @@ export let cart=[
         quantity:1
     },
 
-];
+  ];
+}
+
+
+
+
+function saveToStorage(){
+    localStorage.setItem('cart',JSON.stringify(cart));
+}
+
 export function addToCart(productId){
     let matchingItem;
     cart.forEach((cartItem)=>{
@@ -32,6 +43,7 @@ export function addToCart(productId){
         quantity:1
       });
     }
+    saveToStorage();
 }
 
 // removecart steps 1.create new array
@@ -40,6 +52,7 @@ export function addToCart(productId){
 export function removeFromCart(productId){
 
     const newCart=[];
+
     cart.forEach((cartItem)=>{
       if(cartItem.productId!==productId){
         newCart.push(cartItem);
@@ -47,4 +60,5 @@ export function removeFromCart(productId){
     });
 
     cart=newCart;
+    saveToStorage();
 } 
