@@ -1,4 +1,6 @@
-export const cart=[
+import { products } from "./products.js";
+
+export let cart=[
 
     //we just took product id not name price image this called normalizing data
 
@@ -31,3 +33,18 @@ export function addToCart(productId){
       });
     }
 }
+
+// removecart steps 1.create new array
+//       2.loop though cart
+//       3.add each products to new array except for given productid
+export function removeFromCart(productId){
+
+    const newCart=[];
+    cart.forEach((cartItem)=>{
+      if(cartItem.productId!==productId){
+        newCart.push(cartItem);
+      }
+    });
+
+    cart=newCart;
+} 
