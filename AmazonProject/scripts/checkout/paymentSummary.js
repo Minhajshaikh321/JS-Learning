@@ -18,27 +18,23 @@ Steps calculate order of shipping:
 export function renderPaymentSummary(){
     let productPriceCents=0;
     let shippingPriceCents=0;
-    console.log('payment');
+    let totalQuantity=0;
     cart.forEach((cartItem) => {
 
         const product = getProduct(cartItem.productId);
         productPriceCents += product.priceCents * cartItem.quantity;
-        
+        totalQuantity+=cartItem.quantity;
+        console.log(cartItem.quantity);
         const deliveryOption= getDileveryOption(cartItem.deliveryOptionId);
         shippingPriceCents += deliveryOption.priceCents;
 
     });
 
-    console.log(productPriceCents);
-    console.log(shippingPriceCents);
 
     const totalBeforeTaxCents=productPriceCents+shippingPriceCents;
     const taxCents = totalBeforeTaxCents * 0.1;
     const totalCents = totalBeforeTaxCents + taxCents;
 
-    console.log(totalBeforeTaxCents);
-    console.log(taxCents);
-    console.log(totalCents);
 
     const paymentSummaryHTML=`
         <div class="payment-summary-title">
@@ -46,7 +42,7 @@ export function renderPaymentSummary(){
         </div>
 
         <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (${totalQuantity}):</div>
             <div class="payment-summary-money">$${formatCurrency(productPriceCents)}</div>
         </div>
 
@@ -77,4 +73,13 @@ export function renderPaymentSummary(){
 
     document.querySelector('.js-payment-summary')
         .innerHTML = paymentSummaryHTML;
+
+    document.querySelector('.js-checkout-header')
+        .innerHTML=
+        `
+        Checkout (<a class="return-to-home-link"
+            href="amazon.html">${totalQuantity} items</a>)
+
+        `
+    
 }
