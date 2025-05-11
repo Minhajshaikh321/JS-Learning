@@ -1,3 +1,17 @@
+export function getProduct(productId){
+    let matchingProduct;
+
+    products.forEach((product)=>{
+      if(product.id===productId){
+          matchingProduct=product;
+      }
+
+    })
+   
+  return matchingProduct  ;
+
+}
+
 export const products = [     //forgetting this data into other file have to first exportlater import in amxzaon.js
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
