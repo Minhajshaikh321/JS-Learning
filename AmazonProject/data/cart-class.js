@@ -1,29 +1,36 @@
-// function based object created
+//class based object
 
-function Cart(localStorageKey){
-const cart={
-    cartItems:undefined,
+class Cart{
+    cartItems;
+    localStorageKey;
+
+    constructor(localStorageKey) {
+        this.localStorageKey=localStorageKey;
+        console.log(this.localStorageKey);
+        this.localFromStorage();
+    }
 
     localFromStorage() {   //shorthand property for func
-    this.cartItems=JSON.parse(localStorage.getItem(localStorageKey));
+        this.cartItems=JSON.parse(localStorage.getItem(this.localStorageKey));
 
-    if(!this.cartItems){
-        this.cartItems=[
-            {productId:"e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-            quantity:2,
-            deliveryOptionId:'1'
-            },
-            {productId:"15b6fc6f-327a-4ec4-896f-486349e85a3d",
-            quantity:1,
-            deliveryOptionId:'2'
-            },
-        ];
-    }},
+        if(!this.cartItems){
+            this.cartItems=[
+                {productId:"e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+                quantity:2,
+                deliveryOptionId:'1'
+                },
+                {productId:"15b6fc6f-327a-4ec4-896f-486349e85a3d",
+                quantity:1,
+                deliveryOptionId:'2'
+                },
+            ];
+        }
+    }
+
 
     saveToStorage(){
-        localStorage.setItem(localStorageKey,JSON.stringify(this.cartItems));
-    },
-
+        localStorage.setItem(this.localStorageKey,JSON.stringify(this.cartItems));
+    }
 
     addToCart(productId){
         let matchingItem;
@@ -45,7 +52,7 @@ const cart={
         });
         }
         this.saveToStorage();
-    },
+    }
 
     removeFromCart(productId){
 
@@ -59,8 +66,8 @@ const cart={
 
         this.cartItems=newCart;
         this.saveToStorage();
-    },
-
+    }
+    
     updateDeliveryOption(productId,deliveryOptionId){
         let matchingItem;
 
@@ -74,24 +81,17 @@ const cart={
         this.saveToStorage();
 
     }
-    };
-    return cart;
-
+    
+    
 }
 
 
-const cart=Cart('cart-oop');
-const businessCart=Cart('cart-business');
+const cart= new Cart('cart-oop');  //instance of class
+const businessCart= new Cart('cart-business');
 
-cart.localFromStorage();
-
-// removecart steps 1.create new array
-//       2.loop though cart
-//       3.add each products to new array except for given productid
-
-
-
-businessCart.localFromStorage();
 
 console.log(cart);
 console.log(businessCart);
+
+
+console.log(businessCart instanceof Cart);
