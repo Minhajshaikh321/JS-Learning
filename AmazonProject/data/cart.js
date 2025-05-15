@@ -42,6 +42,7 @@ export function addToCart(productId){
 
     if (matchingItem){
       matchingItem.quantity+=1;
+      console.log(`matching item ${matchingItem.quantity}`);
     }
 
     else{
@@ -50,6 +51,8 @@ export function addToCart(productId){
         quantity:1,
         deliveryOptionId:'1'
       });
+      console.log(`cart qn ${cart.quantity}`);
+
     }
     saveToStorage();
 }

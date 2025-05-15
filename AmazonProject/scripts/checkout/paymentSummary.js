@@ -20,11 +20,11 @@ export function renderPaymentSummary(){
     let shippingPriceCents=0;
     let totalQuantity=0;
     cart.forEach((cartItem) => {
-
+        console.log(cartItem.quantity);
         const product = getProduct(cartItem.productId);
         productPriceCents += product.priceCents * cartItem.quantity;
         totalQuantity+=cartItem.quantity;
-        console.log(cartItem.quantity);
+        // console.log(cartItem.quantity);
         const deliveryOption= getDileveryOption(cartItem.deliveryOptionId);
         shippingPriceCents += deliveryOption.priceCents;
 

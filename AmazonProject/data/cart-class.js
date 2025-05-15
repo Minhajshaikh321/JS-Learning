@@ -2,16 +2,16 @@
 
 class Cart{
     cartItems;
-    localStorageKey;
+    // localStorageKey;   //public key can be access and change outside of class
+    #localStorageKey; //pvt key
 
     constructor(localStorageKey) {
-        this.localStorageKey=localStorageKey;
-        console.log(this.localStorageKey);
-        this.localFromStorage();
+        this.#localStorageKey=localStorageKey;
+        this.#localFromStorage();
     }
 
-    localFromStorage() {   //shorthand property for func
-        this.cartItems=JSON.parse(localStorage.getItem(this.localStorageKey));
+    #localFromStorage() {   //private method created  
+        this.cartItems=JSON.parse(localStorage.getItem(this.#localStorageKey));
 
         if(!this.cartItems){
             this.cartItems=[
@@ -29,7 +29,7 @@ class Cart{
 
 
     saveToStorage(){
-        localStorage.setItem(this.localStorageKey,JSON.stringify(this.cartItems));
+        localStorage.setItem(this.#localStorageKey,JSON.stringify(this.cartItems));
     }
 
     addToCart(productId){
@@ -89,9 +89,9 @@ class Cart{
 const cart= new Cart('cart-oop');  //instance of class
 const businessCart= new Cart('cart-business');
 
+//cart.#localStorageKey='test';   //error raise on console Uncaught SyntaxError: reference to undeclared private field or method #localStorageKey
 
 console.log(cart);
 console.log(businessCart);
-
 
 console.log(businessCart instanceof Cart);
