@@ -61,6 +61,42 @@ class Clothing extends Product{   //inheritance
 
 }
 
+/*
+//built-in class 
+const date= new Date();
+
+console.log(date);
+console.log(date.toLocaleTimeString());
+
+console.log(this);
+
+const Obj2{
+    a:2,
+    b:this.a
+};
+
+above code raise an error cause this is undefine beyond class 
+
+function logThis(){
+  console.log(this);
+
+
+}
+
+logThis();
+logThis.call('helllloo')
+
+//inside a func we can change "this" to whatever we want
+
+
+const Obj3={
+  method:()=>{
+    console.log(this) //inside arrow function this is undefine
+  }
+}
+
+*/
+
 export const products = [     //forgetting this data into other file have to first exportlater import in amxzaon.js
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -727,4 +763,7 @@ export const products = [     //forgetting this data into other file have to fir
   return new Product(productDetails);
 });
 
-console.log(products);
+// console.log(products);
+
+
+

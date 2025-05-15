@@ -1,5 +1,5 @@
 //class based object
-
+//this. is use to access in its own property
 class Cart{
     cartItems;
     // localStorageKey;   //public key can be access and change outside of class
@@ -7,7 +7,7 @@ class Cart{
 
     constructor(localStorageKey) {
         this.#localStorageKey=localStorageKey;
-        this.#localFromStorage();
+        this.#localFromStorage();  
     }
 
     #localFromStorage() {   //private method created  
@@ -95,3 +95,4 @@ console.log(cart);
 console.log(businessCart);
 
 console.log(businessCart instanceof Cart);
+
