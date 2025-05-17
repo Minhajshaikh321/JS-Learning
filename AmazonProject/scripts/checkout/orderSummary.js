@@ -1,5 +1,5 @@
 import {cart,removeFromCart,updateDeliveryOption} from '../../data/cart.js';
-import {products,getProduct} from '../../data/products.js';
+import {products,getProduct, loadProducts} from '../../data/products.js';
 import {formatCurrency} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import {deliveryOptions,getDileveryOption} from '../../data/deliveryOptions.js'
@@ -7,14 +7,10 @@ import {deliveryOptions,getDileveryOption} from '../../data/deliveryOptions.js'
 import {renderPaymentSummary} from './paymentSummary.js';
 
 export function renderOrderSummary(){
-
   let cartSummaryHTML='';
-
   cart.forEach((cartItem)=>{
       const productId=cartItem.productId;
-
       const matchingProduct = getProduct(productId);
-
       const deliveryOptionId = cartItem.deliveryOptionId;
 
       let deliveryOption = getDileveryOption(deliveryOptionId);
@@ -26,9 +22,9 @@ export function renderOrderSummary(){
       );
       
       const dateString=deliveryDate.format('dddd, MMMM D');
-
       cartSummaryHTML+=`
           <div class="cart-item-container 
+          js-cart-item-container 
           js-cart-item-container-${matchingProduct.id}">
               <div class="delivery-date">
                 Delivery date: ${dateString}
@@ -41,7 +37,7 @@ export function renderOrderSummary(){
                 <div class="cart-item-details">
                   <div class="product-name">${matchingProduct.name}</div>
                   <div class="product-price">$${matchingProduct.getPrice()}</div>
-                  <div class="product-quantity">
+                  <div class="product-quantity js-product-quantity-${matchingProduct.id}">
                     <span>
                       Quantity: <span class="quantity-label">${cartItem.quantity}</span>
                     </span>

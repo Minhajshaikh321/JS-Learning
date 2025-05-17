@@ -2,14 +2,12 @@ import {formatCurrency} from '../scripts/utils/money.js'
 
 export function getProduct(productId){
     let matchingProduct;
-
     products.forEach((product)=>{
       if(product.id===productId){
           matchingProduct=product;
       }
 
     })
-   
   return matchingProduct  ;
 
 }
@@ -51,7 +49,6 @@ class Clothing extends Product{   //inheritance
   constructor(productDetails){
     super(productDetails)
     this.sizeChartLink= productDetails.sizeChartLink;
-
   }
 
   extraInfoHTML(){
@@ -99,9 +96,8 @@ const Obj3={
 
 export let products=[];
 
-function loadProducts(){
+export function loadProducts(fun){
   const xhr= new XMLHttpRequest();
-
   xhr.addEventListener('load',()=>{
     products= JSON.parse(xhr.response).map((productDetails)=>{
         if(productDetails.type==='clothing'){
@@ -110,14 +106,14 @@ function loadProducts(){
         return new Product(productDetails);
       });
 
-    console.log('loads products');
-    })
+    fun();
+    });
 
   xhr.open('GET','https://supersimplebackend.dev/products');
   xhr.send();
 }
 
-loadProducts();
+// loadProducts();
 
 /*
 export const products = [     //forgetting this data into other file have to first exportlater import in amxzaon.js
