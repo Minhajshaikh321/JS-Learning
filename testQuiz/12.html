@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        products=[{
+            name:'socks',
+            category:'clothing'
+        },{
+            name:'toaster',
+            category:'appliances'
+        },{
+            name:'shirt',
+            category:'clothing'
+        }
+    ]
+
+    function groupProducts(products){
+        const result=[]
+        products.forEach((product) => {
+            const category = product.category;
+
+            // If the category doesn't exist in the result object, create it
+            if (!result[category]) {
+            result[category] = [product];
+            } else {
+            result[category].push(product);
+            }
+        });
+        // console.log(result);
+        return result
+    }
+
+    console.log(groupProducts(products));
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student={
+            name:"minhaj",
+            score:null
+        };
+        const testResult=[];
+
+        function copyStudent(){
+            return {
+                name:student.name,
+                score:student.score
+
+            }
+        }
+        function addResult(score){
+            console.log(score);
+            /*
+            student.copyObject().score=score;
+            testResult.push(student);
+            */
+
+            
+            const studentCopy={
+                name:student.name,
+                score:student.score
+  
+            };
+            studentCopy.score=score;
+            testResult.push(studentCopy);
+            
+            
+
+            /*
+            copyStudent(student).score=score;
+            testResult.push(student);
+            */
+
+            /*
+            const studentCopy=student;
+            studentCopy.score=score
+            testResult.push(studentCopy);
+            */
+
+            // testResult.push({name:student.name,score});
+        }
+
+        addResult(70);
+        addResult(80);
+        addResult(90);
+        console.log(testResult);
+    </script>
+</body>
+</html>

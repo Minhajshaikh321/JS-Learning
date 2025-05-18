@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="js-display">0</div>
+    <button class="js-start" >start</button>
+    <button class="js-stop" >stop</button>
+    <script>
+        let timerId;
+        let sec=0;
+        let isRunning=false;
+        const startButton = document.querySelector('.js-start');
+        const stopButton = document.querySelector('.js-stop');
+        const displayElement = document.querySelector('.js-display');
+
+        startButton.addEventListener("click",()=>{
+            if(!isRunning){
+                isRunning=true;
+                timerId=setInterval(()=>{
+                    sec ++;
+                    displayElement.innerHTML=sec;
+                },1000)
+            }
+        });
+        stopButton.addEventListener("click",()=>{
+            if(isRunning){
+                isRunning=false;
+                clearInterval(timerId);
+            }
+        });
+    </script>
+</body>
+
+</html>

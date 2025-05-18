@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .on-button{
+            background-color: green;
+            border: none;
+        }
+        .off-button{
+            background-color:darkred;
+            border: none;
+        }
+        /* .toggle-button{
+            color: black;
+            background-color: azure;
+            border: none;
+        } */
+
+    </style>
+</head>
+<body>
+    <button class="on-button toggle-button js-toggle">
+        ON
+    </button>
+
+    <script>
+        const button=document.querySelector('.js-toggle');
+        button.addEventListener('click',()=>{
+            if(button.classList.contains('on-button')){
+                button.classList.addClass('off-button')
+                button.classList.removeClass('on-button')
+                button.innerHTML='OFF'
+            }else{
+                button.classList.addClass('on-button')
+                button.innerHTML='ON'
+
+
+            }
+        })
+    </script>
+</body>
+</html>
