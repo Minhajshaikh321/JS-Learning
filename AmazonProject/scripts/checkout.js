@@ -11,16 +11,24 @@ await=lets wait for promise to finish before going to next line.
 
 async function loadPage(){
 
-    await loadProductsFetch();
+    try{
+        await loadProductsFetch();
 
-    const value=await new Promise((resolve)=>{ //wait for finish after resolve go to next function
-        loadCart(()=>{
-            resolve('value 3');
+        const value=await new Promise((resolve,reject)=>{ //wait for finish after resolve go to next function
+            // throw 'errror';     //manually raise an error though 'throw'
+            loadCart(()=>{
+                //reject('error3');  //reject use to throw an error in future
+                resolve('value 3');
+            });
         });
-    });
-    console.log(value);
-    renderOrderSummary();
-    renderPaymentSummary();
+    }
+
+    catch(error){
+        console.log('unexpected error found in async.')
+
+    }
+        renderOrderSummary();
+        renderPaymentSummary();
 
 }
 
