@@ -2,27 +2,50 @@ import {renderOrderSummary} from './checkout/orderSummary.js';
 import {renderPaymentSummary} from './checkout/paymentSummary.js';
 import {loadProducts,loadProductsFetch} from '../data/products.js';
 import { loadCart } from '../data/cart.js';
-// import '../data/cart-oop.js';
-// import '../data/cart-class.js';
-// import '../data/backend-practice.js';
 
-//promise keepor code flat and avoid to much nesting;
+/*
+async await is shortcut for promise and remove all extra code
+async=make a function return a promise.
+await=lets wait for promise to finish before going to next line.
+*/
 
+async function loadPage(){
 
-Promise.all([  //let just run multiple promise on same time
+    await loadProductsFetch();
 
-    loadProductsFetch(),
-    new Promise((resolve)=>{ //wait for finish after resolve go to next function
+    const value=await new Promise((resolve)=>{ //wait for finish after resolve go to next function
         loadCart(()=>{
-            resolve('value 2');
+            resolve('value 3');
         });
-    })
-
-]).then((value)=>{
+    });
     console.log(value);
     renderOrderSummary();
     renderPaymentSummary();
+
+}
+
+loadPage()
+
+
+
+//promise keepor code flat and avoid to much nesting;
+
+/*
+Promise.all([  //let just run multiple promise on same time
+
+    loadProductsFetch(), //use loadproductfetch which worh here as promise
+    new Promise((resolve)=>{ //wait for finish after resolve go to next function
+        loadCart(()=>{
+            resolve();
+        });
+    })
+
+]).then(()=>{
+    renderOrderSummary();
+    renderPaymentSummary();
 });
+*/
+
 
 /*
 Promise.all([  //let just run multiple promise on same time
@@ -43,9 +66,8 @@ Promise.all([  //let just run multiple promise on same time
     renderOrderSummary();
     renderPaymentSummary();
 });
-
-
 */
+
 
 /*
 new Promise((resolve)=>{
@@ -70,6 +92,7 @@ new Promise((resolve)=>{
 
 });
 */
+
 
 /*
 loadProducts(()=>{
